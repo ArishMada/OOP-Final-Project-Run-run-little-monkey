@@ -24,9 +24,6 @@ public class MainGame extends GameScene implements SceneMethods {
     private long elapsedTime, elapsedSeconds,  secondsDisplay, elapsedMinutes;
     private Font textFont;
 
-//    private int widthFromPlayerToEnd;
-//    private int heightFromPlayerToEnd;
-
     public MainGame(Game game) {
         super(game);
         loadLvl(); //load the default level
@@ -83,28 +80,6 @@ public class MainGame extends GameScene implements SceneMethods {
         }
 
         g.drawImage(game.getTileManager().getSprite(lvlID), player.getX(), player.getY(), null);
-//
-//        for(int y = 0; y < level.length; y++){
-//            for(int x = 0; x < level[y].length; x++){
-//                int lvlId = level[y][x];
-//                g.drawImage(game.getTileManager().getSprite(lvlId), x*32, y*32, null);
-//            }
-//        }
-
-//        if (player.getPlayerDirection() == DOWN || player.getPlayerDirection() == RIGHT) {
-//            g.drawRect(player.getX() + 15, player.getY()+18, 32, 32);
-//        } else if (player.getPlayerDirection() == LEFT) {
-//           g.drawRect(player.getX() + 13, player.getY()+18, 32, 32);
-//        } else {
-//            g.drawRect(player.getX()+ 10, player.getY() + 15, 32, 32);
-//        }
-
-//        for(int y = 0; y < player.getY()-32; y++) {
-//            for (int x = 0; x < player.getX()-32; x++) {
-//                System.out.println(x + " " + y);
-//                g.fillRect(x, y, 32, 32);
-//            }
-//        }
 
         bottomMainGameBar.draw(g);
 
@@ -127,8 +102,6 @@ public class MainGame extends GameScene implements SceneMethods {
     public int getTileType(int x, int y) {
         if (x <= 1024 && x >= 0 && y <= 640 && y >= 16) {
             int id = level[y / 32][x / 32];
-//            System.out.println("y: " + y/32);
-//            System.out.println("x: " + x/32);
             return game.getTileManager().getTile(id).getType();
         } else {
             return 0;
