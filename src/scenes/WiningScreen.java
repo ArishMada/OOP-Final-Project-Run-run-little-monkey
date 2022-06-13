@@ -90,10 +90,12 @@ public class WiningScreen extends GameScene {
 
     public void mouseClicked(int x, int y) {
         if (menuBtn.getBoundaries().contains(x, y)) {
+            game.getSound().setFile(1);
+            game.getSound().play();
             mainGame.reset(); //reset the position of the player
             SetGameState(Menu);
-            game.getSound().setFile(2);
-            game.getSound().loop();
+            game.getMusic().setFile(1);
+            game.getMusic().loop();
         }
     }
 

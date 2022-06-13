@@ -34,12 +34,15 @@ public class mainGameBar extends Bar{
     }
 
     public void mouseClicked(int x, int y) {
+        mainGame.game.getSound().setFile(1);
         if (menuBtn.getBoundaries().contains(x, y)){
-            mainGame.game.getSound().stop();
-            mainGame.game.getSound().setFile(2);
-            mainGame.game.getSound().loop();
+            mainGame.game.getSound().play();
+            mainGame.game.getMusic().stop();
+            mainGame.game.getMusic().setFile(1);
+            mainGame.game.getMusic().loop();
             SetGameState(Menu);
         } else if (restartBtn.getBoundaries().contains(x,y)){
+            mainGame.game.getSound().play();
             mainGame.reset();
         }
     }

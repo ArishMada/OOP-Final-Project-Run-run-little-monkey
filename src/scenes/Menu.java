@@ -59,19 +59,23 @@ public class Menu extends GameScene implements SceneMethods {
 
     @Override
     public void mouseClicked(int x, int y) {
+        game.getSound().setFile(1);
         if (btnPlay.getBoundaries().contains(x, y)) {
             game.getMainGame().reset(); // reset the timer and the player position
-            game.getSound().stop();
-            game.getSound().setFile(0);
-            game.getSound().loop();
+            game.getMusic().stop();
+            game.getMusic().setFile(0);
+            game.getMusic().loop();
+            game.getSound().play();
             SetGameState(MainGame);
         } else if (btnEditing.getBoundaries().contains(x, y)) {
-            game.getSound().stop();
+            game.getMusic().stop();
+            game.getSound().play();
             SetGameState(Editing);
         }else if (btnInstructions.getBoundaries().contains(x, y)) {
-            game.getSound().stop();
+            game.getSound().play();
             SetGameState(Instructions);
         } else if (btnQuit.getBoundaries().contains(x, y)) {
+            game.getSound().play();
             System.exit(0);
         }
 

@@ -109,8 +109,8 @@ public class Player {
             if (yCor >= mainGame.getEnd().getY()*32 - 10 && yCor <= mainGame.getEnd().getY()*32 + 10) {
                 finalTime = mainGame.getFinalTime();
                 SetGameState(GameState.WiningScreen);
-                mainGame.game.getSound().stop();
-                mainGame.game.getSound().setFile(1);
+                mainGame.game.getMusic().stop();
+                mainGame.game.getSound().setFile(0);
                 mainGame.game.getSound().play();
             }
         }

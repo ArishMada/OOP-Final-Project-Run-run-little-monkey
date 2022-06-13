@@ -171,15 +171,18 @@ public class editingBar extends Bar {
     }
 
     public void mouseClicked(int x, int y) {
+        editing.game.getSound().setFile(1);
         chosenBtn = null;
         tileToBePlaced = null;
         editing.setTileToBePlaced(null);
         if (menuBtn.getBoundaries().contains(x, y)){
+            editing.game.getSound().play();
             editing.loadLvl(); // reset the tiles as per the file if the data are not saved
             SetGameState(Menu);
-            editing.game.getSound().setFile(2);
-            editing.game.getSound().loop();
+            editing.game.getMusic().setFile(1);
+            editing.game.getMusic().loop();
         } else if (saveBtn.getBoundaries().contains(x,y)){
+            editing.game.getSound().play();
             saveLevel();
         } else if (grassBtn.getBoundaries().contains(x, y)){
             chosenBtn = grassBtn;

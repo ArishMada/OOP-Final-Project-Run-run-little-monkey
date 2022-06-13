@@ -1,5 +1,6 @@
 package main;
 
+import Audio.Music;
 import Audio.Sound;
 import Handling.TileHandling;
 import helperMethods.loadSave;
@@ -25,6 +26,7 @@ public class Game extends JFrame implements Runnable { // to be able to use thre
     private Editing editing;
     private TileHandling tileManager;
     private Sound sound;
+    private Music music;
 
     public Game() {
         createDefaultLevel();
@@ -58,6 +60,7 @@ public class Game extends JFrame implements Runnable { // to be able to use thre
         editing = new Editing(this);
         winingScreen = new WiningScreen(this);
         sound = new Sound();
+        music = new Music();
     }
 
     public void start() { //creatin yhe main thread that will be executed
@@ -80,8 +83,8 @@ public class Game extends JFrame implements Runnable { // to be able to use thre
     @Override
     public void run() { // replacement of game loop
 
-        sound.setFile(2);
-        sound.loop();
+        music.setFile(1);
+        music.loop();
         double timePerFrame= 1000000000.0/FPS; //set the number of frames per second;
         double timePerUpdate = 1000000000.0/UPS; //set the number of updates per second;
 
@@ -152,5 +155,9 @@ public class Game extends JFrame implements Runnable { // to be able to use thre
 
     public Sound getSound() {
         return sound;
+    }
+
+    public Music getMusic() {
+        return music;
     }
 }

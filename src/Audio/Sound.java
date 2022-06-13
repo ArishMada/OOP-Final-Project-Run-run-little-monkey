@@ -9,9 +9,8 @@ public class Sound {
     URL soundURL[] = new URL[30];
 
     public Sound() {
-        soundURL[0] = getClass().getResource("/res/bgMusic.wav");
-        soundURL[1] = getClass().getResource("/res/winingSound.wav");
-        soundURL[2] = getClass().getResource("/res/menuMusic.wav");
+        soundURL[0] = getClass().getResource("/res/winingSound.wav");
+        soundURL[1] = getClass().getResource("/res/btn.wav");
     }
 
     public void setFile(int i) {
@@ -26,10 +25,6 @@ public class Sound {
 
     public void play() {
         clip.start();
-    }
-
-    public void loop() {
-        clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
 
     public void stop() {

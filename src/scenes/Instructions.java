@@ -99,9 +99,9 @@ public class Instructions extends GameScene implements SceneMethods {
     @Override
     public void mouseClicked(int x, int y) {
         if (menuBtn.getBoundaries().contains(x, y)){ //reset the position of the player
+            game.getSound().setFile(1);
+            game.getSound().play();
             SetGameState(Menu);
-            game.getSound().setFile(2);
-            game.getSound().loop();
         }
     }
 
