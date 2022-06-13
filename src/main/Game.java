@@ -60,7 +60,7 @@ public class Game extends JFrame implements Runnable { // to be able to use thre
         sound = new Sound();
     }
 
-    public void start() {
+    public void start() { //creatin yhe main thread that will be executed
         gameThread = new Thread(this){};
         gameThread.start();
     }

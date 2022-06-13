@@ -23,8 +23,7 @@ public class editingBar extends Bar {
 
     private BufferedImage start, end; //images for the special buttons end and start
 
-    //    private ArrayList<OnScreenBtn> tileButtons = new ArrayList<>();
-    // to reach different tiles
+    // to access the tiles that can be rotated
     private Map<OnScreenBtn, ArrayList<Tile>> tileMap = new HashMap<>();
 
     public editingBar(int x, int y, int width, int height, Editing editing) {
@@ -92,8 +91,6 @@ public class editingBar extends Bar {
 
         drawSpecialBtns(g, startBtn, start);
         drawSpecialBtns(g, endBtn, end);
-//        startBtn.draw(g);
-//        endBtn.draw(g);
 
         drawSingleBtn(g, grassBtn); //draw single direction buttons
         drawSingleBtn(g, waterBtn);
@@ -162,7 +159,7 @@ public class editingBar extends Bar {
         return editing.getGame().getTileManager().getSprite(id);
     }
 
-    public void rotateSprite() {
+    public void rotateSprite() { //rotating will just mean going to the next index in the array
         if (tileMap.containsKey(chosenBtn)) {
             currentIndex++;
             if (currentIndex >= tileMap.get(chosenBtn).size()) { //if the index goes out of bounds set it back to 0

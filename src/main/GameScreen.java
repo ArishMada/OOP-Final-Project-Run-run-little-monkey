@@ -39,7 +39,7 @@ public class GameScreen extends JPanel {
         setMaximumSize(size);
     }
 
-    public void paintComponent(Graphics g) {
+    public void paintComponent(Graphics g) { //everything that needs to be drawn on the screen will be in this method
         super.paintComponent(g);
 
         game.getRender().render(g);
